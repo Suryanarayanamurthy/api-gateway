@@ -1,0 +1,28 @@
+const express = require('express')
+const httpProxy = require('express-http-proxy')
+const app = express()
+
+const userServiceProxy = httpProxy('https://user-service')
+
+//Authentication
+app.use((req,res,next)=>{
+//TODO: use authentication logic here
+next()
+});
+
+// Proxy request
+app.get('/users/:userId', (req, res, next) => {
+    userServiceProxy(req, res, next)
+  })
+
+  /* const express = require('express')
+const request = require('request-promise-native')
+const app = express()
+
+// Resolve: GET /users/me
+app.get('/users/me', async (req, res) => {
+  const userId = req.session.userId
+  const uri = `https://user-service/users/${userId}`
+  const user = await request(uri)
+  res.json(user)
+}) */
