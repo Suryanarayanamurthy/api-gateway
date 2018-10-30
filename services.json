@@ -1,12 +1,73 @@
 [
-    {
-      "name": "userapi",
-      "host": "userapi",
-      "port": "3000",
-      "protocol": "http",
-      "rootPath": "api/v1",
-      "middleware": [
-        "authentication"
-      ]
-    }
-  ]
+  {
+    "name": "auth",
+    "host": "localhost",
+    "port": "4010",
+    "protocol": "http",
+    "rootPath": "auth",
+    "endpoints": [],
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "project",
+    "host": "localhost",
+    "port": "4011",
+    "protocol": "http",
+    "rootPath": "project",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "channel",
+    "host": "localhost",
+    "port": "4011",
+    "protocol": "http",
+    "rootPath": "channel",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "user",
+    "host": "localhost",
+    "port": "4011",
+    "protocol": "http",
+    "rootPath": "user",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "faq",
+    "host": "localhost",
+    "port": "4012",
+    "protocol": "http",
+    "rootPath": "faq",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "block",
+    "host": "localhost",
+    "port": "4012",
+    "protocol": "http",
+    "rootPath": "block",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
+    "name": "theme",
+    "host": "localhost",
+    "port": "4012",
+    "protocol": "http",
+    "rootPath": "theme",
+    "middleware": [
+      "authentication"
+    ]
+  }
+]

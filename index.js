@@ -1,12 +1,11 @@
-const express = require('express');
-const bodyParser = require("body-parser");
-const cookieParser = require('cookie-parser');
-const url = require('url')
-const path = require('path');
-const logger = require('morgan');
-const services = require('./services.json');
-const proxy = require('./lib/proxy');
-const restreamer = require('./lib/restreamer');
+const express       = require('express');
+const bodyParser    = require("body-parser");
+const cookieParser  = require('cookie-parser');
+const url           = require('url');
+const logger        = require('morgan');
+const services      = require('./services.json');
+const proxy         = require('./lib/proxy');
+const restreamer    = require('./lib/restreamer');
 
 // set up the app
 const app = express();
@@ -41,7 +40,6 @@ for(let i = 0; i < services.length; i++) {
 
   app.use(`/api/v1/${name}*`, middleware, (req, res, next) => {
     const newPath = url.parse(req.originalUrl).pathname.replace(`/api/v1/${name}`, rootPath);
-    console.log(`Forwarding request to: ${newPath}`);
     proxy.web(req, res, { target: `${protocol}://${host}:${port}/${newPath}` }, next);
   });
 }
