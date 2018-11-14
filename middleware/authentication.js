@@ -6,8 +6,8 @@ module.exports = async function(req, res, next) {
     case config.apiUrl+"/auth/login":
     case config.apiUrl+"/auth/refresh":
     case config.apiUrl+"/auth/signup":
-    case config.apiUrl+"/auth/forgotpass":
-    case config.apiUrl+"/auth/resetpass":
+    case config.apiUrl+"/auth/forgotPass":
+    case config.apiUrl+"/auth/resetPass":
     case config.apiUrl+"/auth/activate":
     case config.apiUrl+"/auth/confirm2fa":
       next();
@@ -17,14 +17,27 @@ module.exports = async function(req, res, next) {
         req.headers['Authorization'] = req.headers['authorization'];
       }
       if(req.headers['Authorization']) {
-        let o = await axios.post(config.authServer + "/auth/check", {}, {headers: {Authorization: req.headers['Authorization']}});
-        if (o.data.success) {
-          req.headers['gatewaypassed'] = 'ok';
-          req.headers['userid'] = o.data.data.userId;
-          next();
+        try {
+          let o = await axios.post(config.authServer + "/auth/check", {}, {headers: {Authorization: req.headers['Authorization']}});
+          if (o.data.userId) {
+            req.headers['gatewaypassed'] = 'ok';
+            req.headers['userid'] = o.data.userId;
+            next();
+          }
+          else {
+            return res.status(401).send('E_AUTH');
+          }
         }
-        else {
-          return res.json(o.data);
+        catch(err) {
+          if(err.response && err.response.data) {
+            console.error(err.response.data);
+            return res.status(err.response.status).send(err.response.data);
+          }
+          else {
+            console.error(err);
+            return res.status(403).send('E_AUTH_OBECTNOTFOUND');
+          }
+          // next();
         }
       }
       else {

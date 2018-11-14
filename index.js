@@ -40,6 +40,8 @@ for(let i = 0; i < services.length; i++) {
 
   app.use(`/api/v1/${name}*`, middleware, (req, res, next) => {
     const newPath = url.parse(req.originalUrl).pathname.replace(`/api/v1/${name}`, rootPath);
+    let targetUrl = protocol+"://"+host+":"+port+"/"+newPath;
+    console.log("Redirected to:"+targetUrl);
     proxy.web(req, res, { target: `${protocol}://${host}:${port}/${newPath}` }, next);
   });
 }
