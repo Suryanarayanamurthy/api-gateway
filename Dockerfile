@@ -1,16 +1,13 @@
-FROM node
+FROM node:8
 
-ADD bin/            /app/bin
-ADD lib/            /app/lib
-ADD middleware/     /app/middleware
-ADD app.js          /app/app.js
-ADD package.json    /app/package.json
-ADD services.json   /app/services.json
+WORKDIR /usr/src/app
 
-WORKDIR /app
+COPY package*.json ./
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 3000
 
-CMD npm start
+CMD ["npm" , "start"]
