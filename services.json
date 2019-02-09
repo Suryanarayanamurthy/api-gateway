@@ -21,6 +21,16 @@
     ]
   },
   {
+    "name": "company",
+    "host": "localhost",
+    "port": "4011",
+    "protocol": "http",
+    "rootPath": "company",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
     "name": "channel",
     "host": "localhost",
     "port": "4011",
