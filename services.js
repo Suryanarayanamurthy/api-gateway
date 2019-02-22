@@ -1,7 +1,8 @@
+module.exports =
 [
   {
     "name": "auth",
-    "host": "localhost",
+    "host": process.env.SERVICE_AUTH || "localhost",
     "port": "4010",
     "protocol": "http",
     "rootPath": "auth",
@@ -12,7 +13,7 @@
   },
   {
     "name": "project",
-    "host": "localhost",
+    "host": process.env.SERVICE_PROJECT ||"localhost",
     "port": "4011",
     "protocol": "http",
     "rootPath": "project",
@@ -22,7 +23,7 @@
   },
   {
     "name": "company",
-    "host": "localhost",
+    "host": process.env.SERVICE_COMPANY ||"localhost",
     "port": "4011",
     "protocol": "http",
     "rootPath": "company",
@@ -32,7 +33,7 @@
   },
   {
     "name": "channel",
-    "host": "localhost",
+    "host": process.env.SERVICE_CHANNEL || "localhost",
     "port": "4011",
     "protocol": "http",
     "rootPath": "channel",
@@ -42,7 +43,7 @@
   },
   {
     "name": "user",
-    "host": "localhost",
+    "host": process.env.SERVICE_USER || "localhost",
     "port": "4011",
     "protocol": "http",
     "rootPath": "user",
