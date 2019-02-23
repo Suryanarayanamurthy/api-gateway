@@ -63,7 +63,7 @@ module.exports =
   },
   {
     "name": "block",
-    "host": "localhost",
+    "host": process.env.SERVICE_BLOCK || "localhost",
     "port": "4012",
     "protocol": "http",
     "rootPath": "block",

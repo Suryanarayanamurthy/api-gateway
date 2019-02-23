@@ -16,7 +16,9 @@ ENV SERVICE_USER stokr-service-user
 
 ENV SERVICE_CHANNEL stokr-service-channel
 
-ENV SERVICE_CHANNEL stokr-service-company
+ENV SERVICE_COMPANY stokr-service-company
+
+ENV SERVICE_BLOCK stokr-service-block
 
 EXPOSE 3000
 
