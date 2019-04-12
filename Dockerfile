@@ -10,6 +10,8 @@ COPY . ./
 
 ENV SERVICE_AUTH stokr-service-auth
 
+ENV SERVICE_AUTH_FULL_PATH http://stokr-service-auth:4010
+
 ENV SERVICE_PROJECT stokr-service-project
 
 ENV SERVICE_USER stokr-service-user
