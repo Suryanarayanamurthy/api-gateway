@@ -80,5 +80,15 @@ module.exports =
     "middleware": [
       "authentication"
     ]
+  },
+  {
+    "name": "compilance",
+    "host": process.env.STOKR_SERVICE_RISK_QUESTIONS || "localhost",
+    "port": "4015",
+    "protocol": "http",
+    "rootPath": "compilance",
+    "middleware": [
+      "authentication"
+    ]
   }
 ]

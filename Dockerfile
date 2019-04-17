@@ -22,6 +22,8 @@ ENV SERVICE_COMPANY stokr-service-company
 
 ENV SERVICE_BLOCK stokr-service-block
 
+ENV  STOKR_SERVICE_RISK_QUESTIONS stokr-service-risk-questions
+
 EXPOSE 3000
 
 CMD ["npm" , "start"]
