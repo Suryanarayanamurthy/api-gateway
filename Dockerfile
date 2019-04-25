@@ -24,6 +24,8 @@ ENV SERVICE_BLOCK stokr-service-block
 
 ENV  STOKR_SERVICE_RISK_QUESTIONS stokr-service-risk-questions
 
+ENV STOKR_SERVICE_MEDIA stokr-service-media
+
 EXPOSE 3000
 
 CMD ["npm" , "start"]

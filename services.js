@@ -90,5 +90,15 @@ module.exports =
     "middleware": [
       "authentication"
     ]
+  },
+  {
+    "name": "media",
+    "host": process.env.STOKR_SERVICE_MEDIA || "localhost",
+    "port": "4016",
+    "protocol": "http",
+    "rootPath": "media",
+    "middleware": [
+      "authentication"
+    ]
   }
 ]
