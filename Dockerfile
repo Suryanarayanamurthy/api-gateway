@@ -26,6 +26,8 @@ ENV  STOKR_SERVICE_RISK_QUESTIONS stokr-service-risk-questions
 
 ENV STOKR_SERVICE_MEDIA stokr-service-media
 
+ENV STOKR_SERVICE_EVENTDB stokr-service-eventdb
+
 EXPOSE 3000
 
 CMD ["npm" , "start"]

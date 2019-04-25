@@ -100,5 +100,15 @@ module.exports =
     "middleware": [
       "authentication"
     ]
+  },
+  {
+    "name": "eventdb",
+    "host": process.env.STOKR_SERVICE_EVENTDB || "localhost",
+    "port": "4017",
+    "protocol": "http",
+    "rootPath": "eventdb",
+    "middleware": [
+      "authentication"
+    ]
   }
 ]
