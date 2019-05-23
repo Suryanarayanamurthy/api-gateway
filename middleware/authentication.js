@@ -22,6 +22,7 @@ module.exports = async function(req, res, next) {
           if (o.data.userId) {
             req.headers['gatewaypassed'] = 'ok';
             req.headers['userid'] = o.data.userId;
+	    req.headers['user_type'] = o.data.userType;
             next();
           }
           else {
