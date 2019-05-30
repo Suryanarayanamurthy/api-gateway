@@ -38,11 +38,10 @@ module.exports = async function(req, res, next) {
             console.error(err);
             return res.status(403).send('E_AUTH_OBECTNOTFOUND');
           }
-          // next();
         }
       }
       else {
-        next();
+         return res.status(401).send('E_AUTH');
       }
   }
 };
