@@ -26,7 +26,7 @@ module.exports = async function(req, res, next) {
             next();
           }
           else {
-            return res.status(401).send('E_AUTH');
+            return res.status(403).send('E_AUTH');
           }
         }
         catch(err) {
@@ -41,7 +41,7 @@ module.exports = async function(req, res, next) {
         }
       }
       else {
-         return res.status(401).send('E_AUTH');
+         return res.status(403).send('E_AUTH');
       }
   }
 };
