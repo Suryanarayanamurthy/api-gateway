@@ -28,6 +28,10 @@ ENV STOKR_SERVICE_MEDIA stokr-service-media
 
 ENV STOKR_SERVICE_EVENTDB stokr-service-eventdb
 
+ENV STOKR_SERVICE_MATOMOAPI stokr-service-matomoapi
+
+ENV STOKR_SERVICE_INVESTMENT stokr-service-investment
+
 EXPOSE 3000
 
 CMD ["npm" , "start"]

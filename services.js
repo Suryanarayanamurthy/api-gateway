@@ -52,6 +52,16 @@ module.exports =
     ]
   },
   {
+    "name": "investment",
+    "host": process.env.STOKR_SERVICE_INVESTMENT || "localhost",
+    "port": "4011",
+    "protocol": "http",
+    "rootPath": "investment",
+    "middleware": [
+      "authentication"
+    ]
+  },
+  {
     "name": "faq",
     "host": "localhost",
     "port": "4012",
@@ -110,5 +120,16 @@ module.exports =
     "middleware": [
       "authentication"
     ]
-  }
+  },
+  {
+    "name": "matomoapi",
+    "host": process.env.STOKR_SERVICE_MATOMOAPI || "localhost",
+    "port": "4017",
+    "protocol": "http",
+    "rootPath": "matomoapi",
+    "middleware": [
+      "authentication"
+    ]
+  },
+
 ]
