@@ -54,4 +54,3 @@ If you are unfamiliar with middleware or how it is used in NodeJS/Express I high
 #### Final Thoughts / Future Development
 - It may be worthwile to use something like [Apache Zookeeper](https://zookeeper.apache.org/) to configure the services instead of the "services.json" file.
 - Other types of protocols aside from "http" and "https" still need to be tested. 
-- I am especially interested in seeing if I am able to proxy a request to connect to a websocket server or other two-way communication servers and maintain that connection between the client/server.
